@@ -167,6 +167,7 @@ input.nosubmit {
     background-color: #3670E9;
     color: white;
     padding: 25px;
+    border-radius: 10px 0px 0px 0px;
 }
 
 .footer-box{
