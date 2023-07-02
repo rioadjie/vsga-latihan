@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+body{
+    margin: 0 auto;
+    background-color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+.gambar-side {
+    width: 500px;
+    height: auto;
+    padding: 25px;
+    float: left;
+}
+
+.gambar-side img {
+    width: 610px;
+    height: 610px;
+}
+
+.form-login {
+    width: 500px;
+    height: auto;
+    margin-top: 40px;
+    padding: 25px;
+    float: right;
+}
+
+.form-login a {
+    text-decoration: none;
+    color: #3670E9;
+    font-weight: bolder;
+}
+
+.form-login h1 {
+    margin-top: 30px;
+}
+
+.input_box {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 90%;
+    height: 40px;
+}
+
+.input_box label {
+    color: black;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.input_box input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 30px;
+    color: #333;
+    transition: all 0.2s ease;
+    border-bottom: 1.5px solid #aaaaaa;
+    margin-top: 5px;
+}
+
+.input_box input:focus {
+    border-color: #7d2ae8;
+}
+
+.input_box i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-70%);
+    font-size: 20px;
+    color: #707070;
+    margin-top: 32px;
+}
+
+.input_box i.pw_hide {
+    right: 0;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.option_field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.option_field a {
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-size: small;
+}
+
+.checkbox {
+    display: flex;
+    column-gap: 10px;
+    white-space: nowrap;
+}
+
+.checkbox input {
+    accent-color: #7d2ae8;
+}
+
+.checkbox label {
+    font-size: small;
+    cursor: pointer;
+    user-select: none;
+    color: black;
+    font-weight: 300;
+}
+
+button {
+    background-color: #3670E9;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 30px;
+}
