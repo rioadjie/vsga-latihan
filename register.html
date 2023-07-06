@@ -13,14 +13,14 @@
 <body>
     <!-- Gambar side -->
     <section class="gambar-side">
-        <img src="images/Login.png" alt="login">
+        <img src="images/Registrasi.png" alt="login">
     </section>
 
     <!-- Form Login -->
     <aside class="form-login">
         <a href="index.html"> < Beranda</a>
-        <h1>Masuk</h1>
-        <p>Jika anda belum memiliki akun, anda dapat <span><a href="register.html">Registrasi disini !</a></span></p>
+        <h1>Registrasi</h1>
+        <p>Jika anda sudah memiliki akun, anda dapat <span><a href="login.html">Masuk disini !</a></span></p>
         <!-- Form -->
         <div class="login_form">
             <form action="#">
@@ -30,21 +30,24 @@
                     <i class="fa-solid fa-envelope"></i>
                 </div>
                 <div class="input_box">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Masukan username anda" required />
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="input_box">
                     <label for="password">Password</label>
                     <input type="password" placeholder="Masukan Password" required />
                     <i class="fa-solid fa-lock"></i>
                     <i class="fa-solid fa-eye-slash pw_hide"></i>
                 </div>
-                
-                <div class="option_field">
-                    <span class="checkbox">
-                        <input type="checkbox" id="check" />
-                        <label for="check">Ingat Saya</label>
-                    </span>
-                    <a href="#" class="forgot_pw">Lupa Password?</a>
+                <div class="input_box">
+                    <label for="password">Konfirmasi Password</label>
+                    <input type="password" placeholder="Masukan Kembali Password" required />
+                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-eye-slash pw_hide"></i>
                 </div>
-                
-                <button class="button">Masuk</button>
+                                
+                <button class="button">Registrasi</button>
             </form>
           </div>
     </aside>
