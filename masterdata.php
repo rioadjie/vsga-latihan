@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JWD A - Poliwangi</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-master.css">
+    <!-- Ikon dari Fontawesome -->
     <link rel="stylesheet" href="fontawesome/css/fontawesome.css">
     <link rel="stylesheet" href="fontawesome/css/brands.css">
     <link rel="stylesheet" href="fontawesome/css/solid.css">
 </head>
+
 <body>
     <div class="container">
         <!-- Header -->
@@ -28,14 +32,14 @@
                     <input class="nosubmit" type="search" name="cari" placeholder="Cari..">
                 </form>
             </div>
-            
-            <div class="clearfix"></div> 
-        
+
+            <div class="clearfix"></div>
+
             <!-- Navbar -->
             <nav class="main-menu">
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
-                    <li><a href="tentangkami.html" class="aktif">Tentang Kami</a></li>
+                    <li><a href="tentangkami.html">Tentang Kami</a></li>
                     <li class="dropdown"><a href="#">Layanan</a>
                         <ul class="dropdown-content">
                             <li><a href="#">Peminjaman</a></li>
@@ -43,7 +47,7 @@
                             <li><a href="#">Stok Opname</a></li>
                         </ul>
                     </li>
-                    <li><a href="masterdata.php">Master Data</a></li>
+                    <li><a href="masterdata.php" class="aktif">Master Data</a></li>
                     <li><a href="#">Laporan</a></li>
                     <li><a href="#">Kontak</a></li>
                     <li><a href="biodata.php">Biodata</a></li>
@@ -61,25 +65,50 @@
         <!-- End of Slider -->
 
         <!-- Conten -->
-        <section>
-            <article class="content-tentangkami">
-                <h1>Tentang Kami</h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur. Mi vel ut in in non maecenas mattis. Facilisis enim netus iaculis pretium justo enim. Et sollicitudin lacus tempus ultricies ut ut ac erat. Tincidunt vel phasellus mi nisl etiam auctor. Ut magna lacus phasellus consectetur dignissim velit ac blandit. Hendrerit sed accumsan morbi cras nunc porttitor luctus venenatis. Consequat urna iaculis sagittis congue tortor nulla. Cursus in praesent urna tortor scelerisque scelerisque. Nisl donec ac sagittis tellus cras suscipit. Elit facilisis aliquet tortor ut donec imperdiet condimentum.
-                </p>
-            </article>
+        <h1>Tabel Mahasiswa</h1>
+        <a href="tambah_mahasiswa.php">
+            <button class="btn-login" style="margin-bottom: 10px;">Tambah Data</button>
+        </a>
 
-            <!-- Sidebar -->
-            <aside class="logo-ttgkami">
-                <img src="images/logo poliwangi.svg" alt="LogoPoliwangi">
-            </aside>
+        <table id="customers">
+            <tr>
+                <th>No</th>
+                <th>Nama Mahasiswa</th>
+                <th>NIM</th>
+                <th>Kelas</th>
+                <th>Email</th>
+                <th>Alamat</th>
+                <th>Aksi</th>
+            </tr>
+            <?php
+            include('koneksi.php');
 
-            <div class="clearfix"></div>
-        </section>
+            $query = "SELECT * FROM mahasiswa";
+            $result = mysqli_query($koneksi, $query);
+            $i = 1;
+            while ($d = mysqli_fetch_array($result)) {
+            ?>
+                <tr>
+                    <td><?php echo $i++; ?></td>
+                    <td><?php echo $d['nama_mhs']; ?></td>
+                    <td><?php echo $d['nim']; ?></td>
+                    <td><?php echo $d['kelas']; ?></td>
+                    <td><?php echo $d['email']; ?></td>
+                    <td><?php echo $d['alamat']; ?></td>
+                    <td>
+                        <a href="#"><i class="fas fa-edit" style="color: green;"></i></a>&ensp;
+                        <a href="#"><i class="fas fa-trash-alt" style="color: red"></i></a>
+                    </td>
+                </tr>
+            <?php
+            }
+            ?>
+        </table>
+        <br><br><br>
         <!-- End of Content -->
 
         <!-- Footer -->
-        <footer class="main-footer" style="border-radius: 20px 20px 0px 0px;">
+        <footer class="main-footer">
             <div class="footer-box">
                 <img src="images/logo poliwangi.svg" alt="LogoPoliwangi">
             </div>
@@ -104,7 +133,8 @@
             <div class="clearfix"></div>
         </footer>
         <!-- End of Footer -->
-        <div class="footer2"><hr>
+        <div class="footer2">
+            <hr>
             <div class="footer-box1">
                 <p><small>Hak Cipta &copy;2023. Hak Cipta Dilindungi</small></p>
             </div>
@@ -120,4 +150,5 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="http://malsup.github.com/jquery.cycle2.js"></script>
 </body>
+
 </html>

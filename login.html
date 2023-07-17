@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="fontawesome/css/fontawesome.css">
     <link rel="stylesheet" href="fontawesome/css/brands.css">
     <link rel="stylesheet" href="fontawesome/css/solid.css">
+    <script src="js/script.js"></script>
 </head>
 <body>
     <!-- Gambar side -->
@@ -23,28 +24,22 @@
         <p>Jika anda belum memiliki akun, anda dapat <span><a href="register.html">Registrasi disini !</a></span></p>
         <!-- Form -->
         <div class="login_form">
-            <form action="#">
+            <form action="" name="myForm" onsubmit="return validateForm(event)" method="post">
                 <div class="input_box">
-                    <label for="email">Email</label>
-                    <input type="email" placeholder="Masukan alamat email anda" required />
+                    <label for="mail">Email</label>
+                    <input type="text" placeholder="Masukan alamat email anda" name="email" />
                     <i class="fa-solid fa-envelope"></i>
+                    <div id="error"></div><br>
                 </div>
                 <div class="input_box">
-                    <label for="password">Password</label>
-                    <input type="password" placeholder="Masukan Password" required />
+                    <label for="pass">Password</label>
+                    <input type="password" placeholder="Masukan Password" name="password" />
                     <i class="fa-solid fa-lock"></i>
                     <i class="fa-solid fa-eye-slash pw_hide"></i>
+                    <div id="error"></div><br>
                 </div>
-                
-                <div class="option_field">
-                    <span class="checkbox">
-                        <input type="checkbox" id="check" />
-                        <label for="check">Ingat Saya</label>
-                    </span>
-                    <a href="#" class="forgot_pw">Lupa Password?</a>
-                </div>
-                
-                <button class="button">Masuk</button>
+                                
+                <button class="button" type="submit" value="Submit">Masuk</button>
             </form>
           </div>
     </aside>
