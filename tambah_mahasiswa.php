@@ -31,19 +31,19 @@ include('koneksi.php');
             <div class="card-body">
                 <form method="POST" action="tmahasiswa.php">
                     <div class="form-group">
-                        <input type="text" id="nama_mhs" name="nama_mhs" class="form-control" placeholder="Nama Lengkap">
+                        <input type="text" id="nama_mhs" name="nama_mhs" class="form-control" placeholder="Nama Lengkap" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="nim" name="nim" class="form-control" placeholder="NIM">
+                        <input type="text" id="nim" name="nim" class="form-control" placeholder="NIM" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas">
+                        <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="email" name="email" class="form-control" placeholder="Email">
+                        <input type="text" id="email" name="email" class="form-control" placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="alamat" id="alamat" class="form-control" placeholder="Alamat"></textarea>
+                        <textarea name="alamat" id="alamat" class="form-control" placeholder="Alamat" required></textarea>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Simpan Data</button>

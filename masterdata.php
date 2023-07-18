@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="fontawesome/css/solid.css">
 </head>
 
+<!-- penting untuk menggunakan fungsi session di bawah ini  -->
+<?php session_start(); ?>
+
 <body>
     <div class="container">
         <!-- Header -->
@@ -149,6 +152,18 @@
     <!-- Script -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="http://malsup.github.com/jquery.cycle2.js"></script>
+    <!-- jangan lupa menambahkan script js sweet alert di bawah ini  -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- jika ada session sukses maka tampilkan sweet alert dengan pesan yang telah di set
+    di dalam session sukses  -->
+    <?php if (@$_SESSION['sukses']) { ?>
+        <script>
+            swal("Yeah!", "<?php echo $_SESSION['sukses']; ?>", "success");
+        </script>
+        <!-- jangan lupa untuk menambahkan unset agar sweet alert tidak muncul lagi saat di refresh -->
+    <?php unset($_SESSION['sukses']);
+    } ?>
 </body>
 
 </html>
