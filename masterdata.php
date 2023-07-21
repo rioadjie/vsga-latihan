@@ -76,6 +76,9 @@ include('koneksi.php');
         <a href="tambah_mahasiswa.php">
             <button class="btn-login" style="margin-bottom: 10px;">Tambah Data</button>
         </a>
+        <a href="./proses/exportdataexel.php">
+            <button class="btn-login" style="float: right; margin-right: 10px;" >Export to Exel</button>
+        </a>
 
         <table id="customers">
             <tr>

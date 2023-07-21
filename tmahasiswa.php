@@ -19,7 +19,7 @@ mysqli_query($koneksi, "INSERT INTO mahasiswa (nama_mhs,nim,kelas,email,alamat) 
 // membuat session data berhasil di simpan
 $_SESSION["sukses"] = 'Data Berhasil Disimpan';
 
-// kembali ke halaman tabel mahasiswa
+// kembali ke halaman master data
 header("location:masterdata.php");
 
 
