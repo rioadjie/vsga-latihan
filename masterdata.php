@@ -1,3 +1,7 @@
+<?php
+include('koneksi.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,8 +88,6 @@
                 <th>Aksi</th>
             </tr>
             <?php
-            include('koneksi.php');
-
             $query = "SELECT * FROM mahasiswa";
             $result = mysqli_query($koneksi, $query);
             $i = 1;
@@ -99,8 +101,8 @@
                     <td><?php echo $d['email']; ?></td>
                     <td><?php echo $d['alamat']; ?></td>
                     <td>
-                        <a href="#"><i class="fas fa-edit" style="color: green;"></i></a>&ensp;
-                        <a href="#"><i class="fas fa-trash-alt" style="color: red"></i></a>
+                        <a href="update_mahasiswa.php?id=<?php echo $d['id_mhs']; ?>"><i class="fas fa-edit" style="color: green;"></i></a>&ensp;
+                        <a href="hapus_mahasiswa.php?id=<?php echo $d['id_mhs']; ?>"><i class="fas fa-trash-alt" style="color: red"></i></a>
                     </td>
                 </tr>
             <?php
