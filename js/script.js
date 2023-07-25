@@ -16,15 +16,15 @@ pwShowHide.forEach((icon) => {
 
 function validateForm(event) {
   event.preventDefault();
-  let email = document.forms["myForm"]["email"].value;
+  let email = document.forms["myForm"]["username"].value;
   let password = document.forms["myForm"]["password"].value;
   let errors = document.getElementById("error").innerHTML;
 
   if(email === ""){
-      errors.innerHTML = "Email tidak boleh kosong";
+      errors.innerHTML = "Username tidak boleh kosong";
   } else if(password === "") {
       errors.innerHTML = "Password tidak boleh kosong";
-  } else if (email === "rio@gmail.com" && password === "1234") {
+  } else if (email === "rio" && password === "1234") {
       alert("Congratulations, Login Successfully!");
   } else {
       alert("Login Failed!!");

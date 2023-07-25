@@ -30,7 +30,7 @@ include('koneksi.php');
                 </a>
             </div>
             <div class="login">
-                <a href="login.html">
+                <a href="login.php">
                     <button class="btn-login">Login</button>
                 </a>
             </div>
@@ -77,7 +77,7 @@ include('koneksi.php');
             <button class="btn-login" style="margin-bottom: 10px;">Tambah Data</button>
         </a>
         <a href="./proses/exportdataexel.php">
-            <button class="btn-login" style="float: right; margin-right: 10px;" >Export to Exel</button>
+            <button class="btn-login" style="float: right; margin-right: 10px;">Export to Exel</button>
         </a>
 
         <table id="customers">
@@ -105,7 +105,7 @@ include('koneksi.php');
                     <td><?php echo $d['alamat']; ?></td>
                     <td>
                         <a href="update_mahasiswa.php?id=<?php echo $d['id_mhs']; ?>"><i class="fas fa-edit" style="color: green;"></i></a>&ensp;
-                        <a href="hapus_mahasiswa.php?id=<?php echo $d['id_mhs']; ?>"><i class="fas fa-trash-alt" style="color: red"></i></a>
+                        <a href="hapus_mahasiswa.php?id=<?php echo $d['id_mhs']; ?>" class="alert_notif"><i class="fas fa-trash-alt" style="color: red"></i></a>
                     </td>
                 </tr>
             <?php
@@ -158,17 +158,46 @@ include('koneksi.php');
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="http://malsup.github.com/jquery.cycle2.js"></script>
     <!-- jangan lupa menambahkan script js sweet alert di bawah ini  -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- jika ada session sukses maka tampilkan sweet alert dengan pesan yang telah di set
     di dalam session sukses  -->
     <?php if (@$_SESSION['sukses']) { ?>
         <script>
-            swal("Yeah!", "<?php echo $_SESSION['sukses']; ?>", "success");
+            Swal.fire({
+                icon: 'success',
+                title: 'Sukses',
+                text: '<?php echo $_SESSION['sukses']; ?>',
+                timer: 3000,
+                showConfirmButton: false
+            })
         </script>
         <!-- jangan lupa untuk menambahkan unset agar sweet alert tidak muncul lagi saat di refresh -->
     <?php unset($_SESSION['sukses']);
     } ?>
+
+    <!-- Script untuk konfirmasi hapus data -->
+    <script>
+        $('.alert_notif').on('click', function() {
+            var getLink = $(this).attr('href');
+            Swal.fire({
+                title: "Yakin hapus data?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                confirmButtonText: 'Ya',
+                cancelButtonColor: '#3085d6',
+                cancelButtonText: "Batal"
+
+            }).then(result => {
+                //jika klik ya maka arahkan ke proses.php
+                if (result.isConfirmed) {
+                    window.location.href = getLink
+                }
+            })
+            return false;
+        });
+    </script>
 </body>
 
 </html>
