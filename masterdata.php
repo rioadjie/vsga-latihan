@@ -12,9 +12,7 @@ include('koneksi.php');
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style-master.css">
     <!-- Ikon dari Fontawesome -->
-    <link rel="stylesheet" href="fontawesome/css/fontawesome.css">
-    <link rel="stylesheet" href="fontawesome/css/brands.css">
-    <link rel="stylesheet" href="fontawesome/css/solid.css">
+    <script src="https://kit.fontawesome.com/21a2f55f61.js" crossorigin="anonymous"></script>
 </head>
 
 <!-- penting untuk menggunakan fungsi session di bawah ini  -->

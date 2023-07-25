@@ -13,9 +13,7 @@ require('koneksi.php');
     <title>JWD A - Poliwangi</title>
     <link rel="stylesheet" href="css/login.css">
     <!-- Ikon dari Fontawesome -->
-    <link rel="stylesheet" href="fontawesome/css/fontawesome.css">
-    <link rel="stylesheet" href="fontawesome/css/brands.css">
-    <link rel="stylesheet" href="fontawesome/css/solid.css">
+    <script src="https://kit.fontawesome.com/21a2f55f61.js" crossorigin="anonymous"></script>
     <!-- <script src="js/script.js"></script> -->
 </head>
 
