@@ -44,8 +44,15 @@ $styleArray = [
 $i = $i - 1;
 $sheet->getStyle('A1:F'.$i)->applyFromArray($styleArray);
 
+$file = "Report Data Mahasiswa.xlsx";
 $writer = new Xlsx($spreadsheet);
-$writer->save('Report Data Mahasiswa.xlsx');
+$writer->save($file);
+
+// Download Exel
+header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+header('Content-Disposition: attachment; filename="'.$file.'"');
+$writer->save("php://output");
+
 header("location:../masterdata.php");
 
 ?>
